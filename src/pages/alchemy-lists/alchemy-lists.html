@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+  Generated template for the AlchemyLists page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>AlchemyLists</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button (click)="afficherLists()"> Test</button>
+
+  <ion-card [hidden]="!erreur">
+    <ion-card *ngFor="let aide of news" >
+      <ion-item>
+      <h2 *ngIf="aide.source.enriched.url.title"><strong>Titre:</strong>{{aide.source.enriched.url.title}}</h2>
+      <p *ngIf="aide.source.enriched.url.author">Non définie</p>
+      <p  *ngIf="aide.source.enriched.url.url"><a href="#" (click)="afficherPage(aide.source.enriched.url.url)">{{aide.source.enriched.url.author}}</a></p>
+    </ion-item>
+    </ion-card>
+</ion-card>
+<ion-card [hidden]="erreur">
+  <ion-item>
+      <h2>code: {{code}}</h2>
+      <h2>Usage: {{status}}</h2>
+      <h2>Total: {{tot}}</h2>
+      <h2> Etat: {{etatE}}</h2>
+  </ion-item>
+
+</ion-card>
+
+  <ion-card>
+    <ion-item> Le nombre de résultats: {{total}}</ion-item>
+    <button ion-button *ngIf="next" (click)="suivant(next)" >Next</button>
+  </ion-card>
+
+</ion-content>

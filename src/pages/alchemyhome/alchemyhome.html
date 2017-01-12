@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+  Generated template for the Alchemyhome page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>alchemyhome</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+
+    <ion-card-header>INFORMATIONS GENERALES:</ion-card-header>
+
+    <ion-item>
+      <ion-label floating>Entrer l'élément à chercher:</ion-label>
+      <ion-input type="text" [(ngModel)]="champSearch" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Entrer le nombre de semaines:</ion-label>
+      <ion-input type="text" [(ngModel)]="startDate"></ion-input>
+    </ion-item>
+    {{endDate}}
+
+  </ion-card>
+  <ion-card>
+    <ion-card-header>CHOISIR DES FILTRES:</ion-card-header>
+
+    
+
+  <ion-card>
+    <ion-item>
+      <li>Filtre si c'est un mot clé:</li>
+    </ion-item>
+    <ion-item>
+      <ion-label>Activer la recherche pa mot clé</ion-label>
+      <ion-checkbox disable="false" [(ngModel)]="motCle">Activer la recherche pa mot clé</ion-checkbox>
+    </ion-item>
+  </ion-card>
+</ion-card>
+<ion-card>
+
+  <ion-card-header>LES ELEMENTS A RETOURNER:</ion-card-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Url</ion-label>
+      <ion-checkbox [(ngModel)]="url">Url</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Titre</ion-label>
+      <ion-checkbox [(ngModel)]="title"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tout l'article(texte)</ion-label>
+      <ion-checkbox [(ngModel)]="fullText"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Auteur</ion-label>
+      <ion-checkbox [(ngModel)]="author"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+</ion-card>
+<ion-list>
+
+  <button ion-button round  (click)="lancer()">Lancer  <ion-icon name="send"></ion-icon></button >
+</ion-list>
+</ion-content>
